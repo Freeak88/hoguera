@@ -16,6 +16,7 @@
 [![Platform: ESP32](https://img.shields.io/badge/MCU-ESP32-1a1a2e?style=flat-square&logo=espressif&logoColor=white)](firmware/)
 [![Protocol: MQTT](https://img.shields.io/badge/Protocol-MQTT-3b0764?style=flat-square&logo=eclipsemosquitto&logoColor=white)](software/docker-compose.yml)
 [![OSHWA](https://img.shields.io/badge/Standards-OSHWA-4c1d95?style=flat-square)](https://certification.oshwa.org/)
+[![Visits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFreeak88%2Fhoguera&count_bg=%237c3aed&title_bg=%231e1b4b&title=visits&edge_bg=%231e1b4b&count_bg=%238b5cf6)](https://github.com/Freeak88/hoguera)
 
 [_specs_](SPEC.md) · [ _build guide_ ](docs/build-guide/) · [ _species_ ](docs/species/profiles.md) · [ _BOM_ ](hardware/BOM/BOM_v0.1.md) · [ _contribute_ ](CONTRIBUTING.md)
 
