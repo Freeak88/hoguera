@@ -1,9 +1,9 @@
-# Deploy — Hoguera Stack (Aletheia)
+# Deploy — Honguera Stack (Aletheia)
 
 ## 1. Crear estructura de volúmenes
 
 ```bash
-cd /root/.openclaw/workspace/HOGUERA
+cd /root/.openclaw/workspace/HONGUERA
 
 mkdir -p mosquitto/{config,data,logs}
 mkdir -p influxdb/{data,config}
@@ -29,32 +29,32 @@ docker-compose logs -f mosquitto
 - **Mosquitto:** `mqtt://<IP-Aletheia>:1883`
 - **InfluxDB:** http://<IP-Aletheia>:8086
   - User: `admin`
-  - Password: `hoguera_secure_2026`
-  - Org: `hoguera`
+  - Password: `honguera_secure_2026`
+  - Org: `honguera`
   - Bucket: `sensors`
 - **Node-RED:** http://<IP-Aletheia>:1880
 - **Grafana:** http://<IP-Aletheia>:3000
   - User: `admin`
-  - Password: `hoguera_vis_2026`
+  - Password: `honguera_vis_2026`
 
 ## 5. Primer test (desde terminal)
 
 ```bash
 # Suscribirse a todos los tópicos del nodo
-mosquitto_sub -h localhost -t "hoguera/#" -v
+mosquitto_sub -h localhost -t "honguera/#" -v
 
 # Publicar mensaje de prueba
-mosquitto_pub -h localhost -t "hoguera/hoguera-01/sensors/sht40" -m '{"temp_c": 23.4, "humidity_pct": 68.2, "ts": 1713738900}'
+mosquitto_pub -h localhost -t "honguera/honguera-01/sensors/sht40" -m '{"temp_c": 23.4, "humidity_pct": 68.2, "ts": 1713738900}'
 ```
 
 ## 6. Configurar InfluxDB (via UI o CLI)
 
 ```bash
 # Influx CLI dentro del contenedor
-docker exec -it hoguera-influxdb influx
+docker exec -it honguera-influxdb influx
 
 # Crear token para Node-RED (si no se usó el de init)
-influx auth create --org hoguera --write-bucket sensors --read-bucket sensors --all-access
+influx auth create --org honguera --write-bucket sensors --read-bucket sensors --all-access
 ```
 
 ## 7. Node-RED — Primer flow
@@ -64,7 +64,7 @@ Instalar paquetes:
 - `node-red-dashboard` (opcional para UI rápida)
 
 Configurar:
-1. `mqtt in` → broker `mosquitto`, tópico `hoguera/hoguera-01/sensors/#`
+1. `mqtt in` → broker `mosquitto`, tópico `honguera/honguera-01/sensors/#`
 2. `json` parse
 3. `function` → transformar a InfluxDB Line Protocol
 4. `influxdb out` → bucket `sensors`
@@ -72,9 +72,9 @@ Configurar:
 ## 8. Grafana — Dashboard base
 
 Datasource:
-- Name: `Hoguera InfluxDB`
+- Name: `Honguera InfluxDB`
 - URL: `http://influxdb:8086`
-- Org: `hoguera`
+- Org: `honguera`
 - Token: (copiar de InfluxDB)
 
 Panel simple:

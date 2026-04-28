@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Hoguera - Generador de Planos Técnicos
+Honguera - Generador de Planos Técnicos
 Genera PDF con:
 1. Plano de la nave (estructura física)
 2. Esquema eléctrico
@@ -22,8 +22,8 @@ import os
 import datetime
 
 # Configuración
-OUTPUT_PDF = "/root/.openclaw/workspace/HOGUERA/blueprints/HOGUERA_v1.0_PLANOS.pdf"
-TEMP_DIR = "/root/.openclaw/workspace/HOGUERA/blueprints/temp"
+OUTPUT_PDF = "/root/.openclaw/workspace/HONGUERA/blueprints/HONGUERA_v1.0_PLANOS.pdf"
+TEMP_DIR = "/root/.openclaw/workspace/HONGUERA/blueprints/temp"
 
 os.makedirs(TEMP_DIR, exist_ok=True)
 os.makedirs(os.path.dirname(OUTPUT_PDF), exist_ok=True)
@@ -39,7 +39,7 @@ def draw_nave_structure():
     ax.grid(True, linestyle='--', alpha=0.3)
     ax.set_xlabel('Metros (m)', fontsize=10, fontweight='bold')
     ax.set_ylabel('Metros (m)', fontsize=10, fontweight='bold')
-    ax.set_title('HOGUERA v1.0 - Estructura de la Nave\nDimensiones: 2m × 1.5m × 2m (alto)',
+    ax.set_title('HONGUERA v1.0 - Estructura de la Nave\nDimensiones: 2m × 1.5m × 2m (alto)',
                  fontsize=16, fontweight='bold', pad=20)
 
     # Nave principal (vista superior)
@@ -159,7 +159,7 @@ def draw_electrical_schematic():
     ax.set_ylim(-1, 13)
     ax.set_aspect('equal')
     ax.grid(True, linestyle=':', alpha=0.3)
-    ax.set_title('HOGUERA v1.0 - Esquema Eléctrico',
+    ax.set_title('HONGUERA v1.0 - Esquema Eléctrico',
                  fontsize=20, fontweight='bold', pad=30)
     ax.axis('off')
 
@@ -181,7 +181,7 @@ def draw_electrical_schematic():
     draw_component(11, 11.5, 2, 1.4, 'Fuente DC\n12V/2A', '#E8F5E9', linewidth=2.5)
 
     # Fila media: ESP32
-    draw_component(7, 8, 3, 3, 'ESP32\n(Hoguera-01)\nWiFi+MQTT', '#FFF9C4', linewidth=3)
+    draw_component(7, 8, 3, 3, 'ESP32\n(Honguera-01)\nWiFi+MQTT', '#FFF9C4', linewidth=3)
 
     # Fila media-derecha: Actuadores principales
     draw_component(13, 9, 2, 1.4, 'SSR\n700W', '#FFCDD2', linewidth=2.5)
@@ -280,7 +280,7 @@ def generate_pdf(nave_file, electrical_file):
     styles = getSampleStyleSheet()
 
     # Portada
-    story.append(Paragraph("HOGUERA v1.0 - Planos Técnicos",
+    story.append(Paragraph("HONGUERA v1.0 - Planos Técnicos",
                           styles['Title']))
     story.append(Spacer(1, 0.5 * cm))
 
@@ -412,7 +412,7 @@ def generate_pdf(nave_file, electrical_file):
     # Footer
     story.append(Paragraph(f"Generado: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}",
                           styles['Normal']))
-    story.append(Paragraph("Proyecto Hoguera v1.0 - Cultivo de Precisión Fúngica",
+    story.append(Paragraph("Proyecto Honguera v1.0 - Cultivo de Precisión Fúngica",
                           styles['Normal']))
 
     # Generar PDF
@@ -420,7 +420,7 @@ def generate_pdf(nave_file, electrical_file):
     return OUTPUT_PDF
 
 if __name__ == "__main__":
-    print("🍄 Generando planos técnicos de Hoguera v1.0 (v3 - Layout expandido)...")
+    print("🍄 Generando planos técnicos de Honguera v1.0 (v3 - Layout expandido)...")
 
     # Generar imágenes
     print("  • Plano de la nave...")

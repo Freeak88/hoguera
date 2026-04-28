@@ -1,6 +1,6 @@
 # Perfiles de Especie — Parámetros de Cultivo
 
-Cada especie requiere condiciones distintas en cada fase. Estos perfiles definen los targets que Hoguera carga vía MQTT.
+Cada especie requiere condiciones distintas en cada fase. Estos perfiles definen los targets que Honguera carga vía MQTT.
 
 ## Gírgola (Pleurotus ostreatus) — Default
 

@@ -1,4 +1,4 @@
-# 🍄 Proyecto "Hoguera" v1.0 — Unidad de Cultivo de Precisión Fúngica
+# 🍄 Proyecto "Honguera" v1.0 — Unidad de Cultivo de Precisión Fúngica
 
 **Creado:** 2026-04-21
 **Estado:** Especificación definida
@@ -34,7 +34,7 @@
 
 ## III. Capa de Control e IoT (Nodo Periférico)
 
-- **MCU:** ESP32 ("Hoguera-01")
+- **MCU:** ESP32 ("Honguera-01")
 - **Sensores:**
   - SHT40: Humedad + Temperatura (interior nave)
   - MH-Z19B: CO₂ (PPM)

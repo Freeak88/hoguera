@@ -1,4 +1,4 @@
-# Hoguera — BOM (Bill of Materials)
+# Honguera — BOM (Bill of Materials)
 
 ## v0.1 — Prototipo Quincho
 

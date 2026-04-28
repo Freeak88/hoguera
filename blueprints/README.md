@@ -1,8 +1,8 @@
-# 📐 Planos Técnicos — Hoguera v1.0
+# 📐 Planos Técnicos — Honguera v1.0
 
 ## PDF Generado
 
-**Archivo:** `HOGUERA_v1.0_PLANOS.pdf` (408KB)
+**Archivo:** `HONGUERA_v1.0_PLANOS.pdf` (408KB)
 
 **Contenido:**
 

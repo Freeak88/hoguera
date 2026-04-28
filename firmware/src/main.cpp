@@ -1,5 +1,5 @@
 /**
- * Hoguera v0.1 — Main Controller
+ * Honguera v0.1 — Main Controller
  * ESP32-based fungal cultivation precision system
  * 
  * Sensors: SHT40 (T/H), MH-Z19B (CO2), DS18B20 (water temp)
@@ -49,13 +49,13 @@ struct Config {
 };
 
 Config cfg = {
-    .wifi_ssid       = "HOGUERA_NET",
+    .wifi_ssid       = "HONGUERA_NET",
     .wifi_pass       = "changeme",
     .mqtt_host       = "192.168.1.100",
     .mqtt_port       = 1883,
-    .mqtt_user       = "hoguera",
+    .mqtt_user       = "honguera",
     .mqtt_pass       = "changeme",
-    .mqtt_topic_base = "hoguera/01",
+    .mqtt_topic_base = "honguera/01",
     
     .pin_ssr_heater   = 25,
     .pin_humidifier   = 26,
@@ -136,7 +136,7 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
     
     String t = String(topic);
     
-    // Phase control: hoguera/01/phase/set
+    // Phase control: honguera/01/phase/set
     if (t.endsWith("/phase/set")) {
         JsonDocument doc;
         deserializeJson(doc, buf);
@@ -150,7 +150,7 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
             cfg.target_temp, cfg.target_humidity, cfg.target_co2_max, cfg.light_on);
     }
     
-    // Manual override: hoguera/01/override
+    // Manual override: honguera/01/override
     if (t.endsWith("/override")) {
         JsonDocument doc;
         deserializeJson(doc, buf);
@@ -164,7 +164,7 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
 }
 
 void mqtt_reconnect() {
-    String client_id = "hoguera-" + String((uint32_t)ESP.getEfuseMac(), HEX);
+    String client_id = "honguera-" + String((uint32_t)ESP.getEfuseMac(), HEX);
     String will_topic = String(cfg.mqtt_topic_base) + "/status";
     
     if (mqtt.connect(client_id.c_str(), cfg.mqtt_user, cfg.mqtt_pass,
@@ -249,7 +249,7 @@ void control_loop() {
 
 void publish_telemetry() {
     JsonDocument doc;
-    doc["version"] = HOGUERA_VERSION;
+    doc["version"] = HONGUERA_VERSION;
     doc["millis"] = millis();
     
     // Sensors
@@ -286,7 +286,7 @@ void publish_telemetry() {
 
 void setup() {
     Serial.begin(115200);
-    Serial.printf("\n[HOGUERA] v%s booting...\n", HOGUERA_VERSION);
+    Serial.printf("\n[HONGUERA] v%s booting...\n", HONGUERA_VERSION);
     
     // Pin modes
     pinMode(cfg.pin_ssr_heater, OUTPUT);
@@ -322,7 +322,7 @@ void setup() {
     mqtt.setCallback(mqtt_callback);
     mqtt_reconnect();
     
-    Serial.println("[HOGUERA] Ready");
+    Serial.println("[HONGUERA] Ready");
 }
 
 // ─── Main Loop ──────────────────────────────────────────────

@@ -1,4 +1,4 @@
-# Hoguera — Stack de Software
+# Honguera — Stack de Software
 # Mosquitto (MQTT) + InfluxDB (timeseries) + Node-RED (dashboard)
 
 version: "3.8"
@@ -6,7 +6,7 @@ version: "3.8"
 services:
   mosquitto:
     image: eclipse-mosquitto:2
-    container_name: hoguera-mqtt
+    container_name: honguera-mqtt
     restart: unless-stopped
     ports:
       - "1883:1883"
@@ -19,15 +19,15 @@ services:
 
   influxdb:
     image: influxdb:2.7
-    container_name: hoguera-influxdb
+    container_name: honguera-influxdb
     restart: unless-stopped
     ports:
       - "8086:8086"
     environment:
       - DOCKER_INFLUXDB_INIT_MODE=setup
-      - DOCKER_INFLUXDB_INIT_USERNAME=hoguera
+      - DOCKER_INFLUXDB_INIT_USERNAME=honguera
       - DOCKER_INFLUXDB_INIT_PASSWORD=changeme_secure
-      - DOCKER_INFLUXDB_INIT_ORG=hoguera
+      - DOCKER_INFLUXDB_INIT_ORG=honguera
       - DOCKER_INFLUXDB_INIT_BUCKET=telemetry
       - DOCKER_INFLUXDB_INIT_RETENTION=90d
     volumes:
@@ -35,12 +35,12 @@ services:
 
   nodered:
     image: nodered/node-red:latest
-    container_name: hoguera-dashboard
+    container_name: honguera-dashboard
     restart: unless-stopped
     ports:
       - "1880:1880"
     environment:
-      - FLOWS=/data/flows_hoguera.json
+      - FLOWS=/data/flows_honguera.json
     volumes:
       - nodered_data:/data
     depends_on:
@@ -49,12 +49,12 @@ services:
 
   grafana:
     image: grafana/grafana:latest
-    container_name: hoguera-grafana
+    container_name: honguera-grafana
     restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
-      - GF_SECURITY_ADMIN_USER=hoguera
+      - GF_SECURITY_ADMIN_USER=honguera
       - GF_SECURITY_ADMIN_PASSWORD=changeme_secure
     volumes:
       - grafana_data:/var/lib/grafana

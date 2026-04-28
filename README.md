@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="docs/assets/logo.svg" width="100" alt="Hoguera">
+<img src="docs/assets/logo.svg" width="100" alt="Honguera">
 
-# 🌿 HOGUERA
+# 🌿 HONGUERA
 
 ### **Open Hardware para Cultivo de Precisión Fúngica**
 
@@ -16,7 +16,7 @@
 [![Platform: ESP32](https://img.shields.io/badge/MCU-ESP32-1a1a2e?style=flat-square&logo=espressif&logoColor=white)](firmware/)
 [![Protocol: MQTT](https://img.shields.io/badge/Protocol-MQTT-3b0764?style=flat-square&logo=eclipsemosquitto&logoColor=white)](software/docker-compose.yml)
 [![OSHWA](https://img.shields.io/badge/Standards-OSHWA-4c1d95?style=flat-square)](https://certification.oshwa.org/)
-[![Visits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFreeak88%2Fhoguera&count_bg=%237c3aed&title_bg=%231e1b4b&title=visits&edge_bg=%231e1b4b&count_bg=%238b5cf6)](https://github.com/Freeak88/hoguera)
+[![Visits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFreeak88%2Fhonguera&count_bg=%237c3aed&title_bg=%231e1b4b&title=visits&edge_bg=%231e1b4b&count_bg=%238b5cf6)](https://github.com/Freeak88/honguera)
 
 [_specs_](SPEC.md) · [ _build guide_ ](docs/build-guide/) · [ _species_ ](docs/species/profiles.md) · [ _BOM_ ](hardware/BOM/BOM_v0.1.md) · [ _contribute_ ](CONTRIBUTING.md)
 
@@ -24,12 +24,12 @@
 
 ---
 
-> **Hoguera** es un sistema de climatización de precisión para cultivo fúngico indoor.
+> **Honguera** es un sistema de climatización de precisión para cultivo fúngico indoor.
 > Controla temperatura, humedad y CO₂ con un ESP32, sensores estándar y una red de inteligencia distribuida.
 >
 > **No es un termostato. Es un micelio digital.**
 
-Un micelio real no tiene cerebro central. Cada hifa percibe, decide y responde localmente — pero comparte información con toda la red. Hoguera funciona igual: sensores distribuidos, control local en el nodo, y una capa de ML que aprende la inercia térmica del espacio como el micelio aprende la geometría del sustrato.
+Un micelio real no tiene cerebro central. Cada hifa percibe, decide y responde localmente — pero comparte información con toda la red. Honguera funciona igual: sensores distribuidos, control local en el nodo, y una capa de ML que aprende la inercia térmica del espacio como el micelio aprende la geometría del sustrato.
 
 **Diseñado para replicarse. Como una espora.**
 
@@ -39,8 +39,8 @@ Un micelio real no tiene cerebro central. Cada hifa percibe, decide y responde l
 
 ```bash
 # Clonar el micelio
-git clone https://github.com/hoguera/hoguera.git
-cd hoguera
+git clone https://github.com/honguera/honguera.git
+cd honguera
 
 # Levantar la red (MQTT + InfluxDB + Node-RED + Grafana)
 cd software && docker compose up -d

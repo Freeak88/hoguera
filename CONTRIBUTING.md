@@ -1,4 +1,4 @@
-# Contribuir a Hoguera
+# Contribuir a Honguera
 
 Gracias por tu interés en contribuir.
 
@@ -34,7 +34,7 @@ Gracias por tu interés en contribuir.
 
 ### Scope del proyecto
 
-Hoguera se enfoca en:
+Honguera se enfoca en:
 - Cultivo fúngico indoor de precisión
 - Hardware replicable con componentes accesibles
 - Control autónomo con feedback de sensores
