@@ -258,6 +258,19 @@ Proyecto multinúcleo. Cada capa respira con su propia licencia:
 | ⚡ Firmware | **GPLv3** | Copyleft fuerte. Protege la red |
 | 📄 Documentación | **CC BY-SA 4.0** | Atribución + compartir igual |
 
+## 🤖 AI Usage Disclosure
+
+This project uses generative AI tools as development aids:
+
+| Use | Model | Scope |
+|-----|-------|-------|
+| Firmware & docs drafting | Claude Sonnet 4, GLM-5 | Translation (ES→EN), boilerplate, formatting |
+| ML model experimentation | Various | Hyperparameter search, code templates |
+
+All AI-generated content is reviewed, tested, and verified by the human author before merging. Technical decisions, architecture, and domain knowledge (mycology, IoT, thermal engineering) are human-authored.
+
+Generated code in commits is marked in the commit message with the model used.
+
 ---
 
 <div align="center">
